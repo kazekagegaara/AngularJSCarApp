@@ -86,7 +86,7 @@ angular.module('carsApp', [])
                  });
                 setTimeout(function(){
                     $("#dataListView").listview("refresh");
-                     $.mobile.loading( "hide" );
+                    $.mobile.loading( "hide" );
                 },100);
                 }).
                 error(function(data, status, headers, config) {                
