@@ -14,8 +14,8 @@ angular.module('carsApp', [])
             $scope.listViewData = [];
             $http({method: 'GET', url: getCarMakesURL}).
                 success(function(data, status, headers, config) {
-                $.each(data,function(index,obj){
-                     $.each(obj,function(index,makesDetails){
+                angular.forEach(data,function(value,obj){
+                     angular.forEach(value,function(makesDetails,index){
                         switch (makesDetails.make_country) {
                             case "Italy":
                             $scope.listViewData.push({name: makesDetails.make_display,countryFlag: "italy.png",id: makesDetails.make_id});
@@ -101,9 +101,8 @@ angular.module('carsApp', [])
             console.log(modelMakeURL);
             $http({method: 'GET', url: modelMakeURL}).
                 success(function(data, status, headers, config) {
-                    //console.log(data);
-                $.each(data,function(index,obj){
-                      $.each(obj,function(index,modelDetails){
+                angular.forEach(data,function(value,obj){
+                    angular.forEach(value,function(modelDetails,index){
                         $scope.listViewData.push({name: modelDetails.model_name,countryFlag: makeName.countryFlag,id: modelDetails.model_make_id});                        
                       });
                   });
