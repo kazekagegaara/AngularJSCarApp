@@ -98,7 +98,6 @@ angular.module('carsApp', [])
             $.mobile.loading( "show" );
             $scope.listViewData = [];
             var modelMakeURL = getCarModelFromMakeURL + makeName.id;
-            console.log(modelMakeURL);
             $http({method: 'GET', url: modelMakeURL}).
                 success(function(data, status, headers, config) {
                 angular.forEach(data,function(value,obj){
